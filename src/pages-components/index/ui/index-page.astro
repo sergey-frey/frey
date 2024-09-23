@@ -1,0 +1,68 @@
+---
+import AboutLabel from "@/components/about-label/about-label.astro";
+import LinkButton from "@/components/button/link-button.astro";
+import ExtraTitle from "@/components/extra-title/extra-title.astro";
+import Header from "@/components/header/header.astro";
+import Link from "@/components/link/link.astro";
+import ProfessionLabel from "@/components/profession-label/profession-label.astro";
+import QuestLink from "@/components/quest-link/quest-link.astro";
+import Layout from "@/layouts/Layout.astro";
+import Icon from "@/shared/ui/icon.astro";
+
+import "./index-page.scss";
+---
+
+<Layout title='Sergey Frey'>
+  <Header amountOfItems={4}>
+    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+      About me
+    </Link>
+    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+      Projects
+    </Link>
+    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+      Contacts
+    </Link>
+    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+      Experience
+    </Link>
+  </Header>
+
+  <main class='main'>
+    <ExtraTitle
+      class={"extra-title"}
+      prefix='social/'
+      socials={[
+        {
+          icon: "telegram",
+          link: "https://t.me/sergey_frey",
+          title: "Telegram",
+        },
+        {
+          icon: "inst",
+          link: "",
+          title: "Instagram",
+        },
+        {
+          icon: "github",
+          link: "https://github.com/3str-webdev",
+          title: "GitHub",
+        },
+      ]}
+    />
+
+    <div class='labels'>
+      <ProfessionLabel client:visible />
+      <AboutLabel />
+    </div>
+
+    <div class='controls'>
+      <LinkButton href={"#"}>
+        Связаться со мной
+        <Icon icon='top-right-arrow' slot={"right-icon"} />
+      </LinkButton>
+
+      <!-- <QuestLink /> -->
+    </div>
+  </main>
+</Layout>

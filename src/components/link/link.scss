@@ -1,0 +1,28 @@
+.link {
+  color: var(--text-accent);
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+
+  padding: 12px;
+
+  transition-property: gap;
+  transition-duration: var(--transition-duration-base);
+  transition-timing-function: ease-in-out;
+
+  .decoration {
+    transition-property: color;
+    transition-duration: var(--transition-duration-base);
+    transition-timing-function: ease-in-out;
+  }
+
+  &:hover {
+    column-gap: 12px;
+
+    .decoration {
+      color: var(--accent);
+    }
+  }
+}

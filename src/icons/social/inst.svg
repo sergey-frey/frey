@@ -1,0 +1,14 @@
+<svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<clipPath id="clip3_105">
+			<rect id="instagram" width="40.000000" height="40.000000" fill="currentColor" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g clip-path="url(#clip3_105)">
+		<path id="path" d="M28.33 5L11.66 5C7.98 5 5 7.98 5 11.66L5 28.33C5 32.01 7.98 35 11.66 35L28.33 35C32.01 35 35 32.01 35 28.33L35 11.66C35 7.98 32.01 5 28.33 5Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+		<path id="path" d="M11.66 5C7.98 5 5 7.98 5 11.66L5 28.33C5 32.01 7.98 35 11.66 35L28.33 35C32.01 35 35 32.01 35 28.33L35 11.66C35 7.98 32.01 5 28.33 5L11.66 5Z" stroke="currentColor" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+		<path id="path" d="M20 26.66C23.68 26.66 26.66 23.68 26.66 20C26.66 16.31 23.68 13.33 20 13.33C16.31 13.33 13.33 16.31 13.33 20C13.33 23.68 16.31 26.66 20 26.66Z" fill="#000000" fill-opacity="0" fill-rule="nonzero"/>
+		<path id="path" d="M26.66 20C26.66 16.31 23.68 13.33 20 13.33C16.31 13.33 13.33 16.31 13.33 20C13.33 23.68 16.31 26.66 20 26.66C23.68 26.66 26.66 23.68 26.66 20Z" stroke="currentColor" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linejoin="round"/>
+		<path id="path" d="M29.16 12.5C30.08 12.5 30.83 11.75 30.83 10.83C30.83 9.91 30.08 9.16 29.16 9.16C28.24 9.16 27.5 9.91 27.5 10.83C27.5 11.75 28.24 12.5 29.16 12.5Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

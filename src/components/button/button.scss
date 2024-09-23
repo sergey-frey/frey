@@ -1,0 +1,44 @@
+.button {
+  padding: 12px 30px;
+  color: var(--text-accent);
+  background-color: var(--accent);
+
+  font-family: inherit;
+  font-size: inherit;
+
+  border: none;
+  border-radius: 10px;
+
+  width: fit-content;
+
+  transition-property: background-color;
+  transition-duration: var(--transition-duration-base);
+  transition-timing-function: ease-in-out;
+
+  &.withIcon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &:hover {
+    background-color: var(--secondary);
+  }
+}
+
+.cursor-marker-wrapper.button-cursor {
+  --cursor-width: calc(var(--w, 3.5rem) + var(--p) * 2);
+  --cursor-height: 3px;
+  --y: calc(var(--targetY) + var(--h) + 15px);
+  --x: calc(var(--targetX) - var(--p) + var(--cursor-width) / 2);
+
+  width: var(--cursor-width);
+  height: var(--cursor-height);
+
+  background-color: var(--accent);
+  border-radius: 10px;
+  border: none;
+
+  transition-property: all, width, height;
+  transition-duration: 250ms, 200ms, 200ms;
+}

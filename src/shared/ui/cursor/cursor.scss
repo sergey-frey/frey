@@ -1,0 +1,59 @@
+.cursor-marker-wrapper,
+.cursor-marker {
+  position: fixed;
+  top: var(--y, -100%);
+  left: var(--x, -100%);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  transition-property: all;
+  transition-duration: 200ms;
+
+  pointer-events: none;
+}
+
+.cursor-marker-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+
+  border-width: 1px;
+  border-color: var(--text-accent);
+  border-style: solid;
+
+  transition-duration: 50ms;
+}
+
+.cursor-marker {
+  width: 0.5rem;
+  height: 0.5rem;
+
+  background-color: var(--text-accent);
+
+  transition-duration: 0ms;
+}
+
+.cursor-marker-wrapper.opacity-bg-cursor {
+  --cursor-width: calc(var(--w, 3.5rem) + var(--p) * 2);
+  --cursor-height: calc(var(--h, 3.5rem) + var(--p) * 2);
+  --y: calc(var(--targetY) - var(--p) + var(--cursor-height) / 2);
+  --x: calc(var(--targetX) - var(--p) + var(--cursor-width) / 2);
+
+  width: var(--cursor-width);
+  height: var(--cursor-height);
+
+  border-radius: 10px;
+  background-color: var(--text-accent);
+  opacity: 0.3;
+
+  transition-property: all, width, height;
+  transition-duration: 200ms;
+}
+
+.cursor-marker.opacity-bg-cursor {
+  background-color: color-mix(in oklab, var(--text-accent) 30%, var(--accent));
+
+  transition-property: background-color;
+  transition-duration: 200ms;
+}

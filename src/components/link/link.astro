@@ -1,0 +1,13 @@
+---
+import "./link.scss";
+
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<a {...props} class:list={["link", className]}>
+  <span class='decoration'>{"<"}</span>
+  <slot />
+  <span class='decoration'>{"/>"}</span>
+</a>

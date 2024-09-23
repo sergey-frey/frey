@@ -1,0 +1,25 @@
+---
+import "./profession-label.scss";
+---
+
+<div class='profession-label'>
+  <h2 class:list={["profession", "typing"]} id='profession-container'></h2>
+
+  <p aria-hidden class:list={["profession", "hidden"]}>
+    Front<br />
+    end<br />
+    develo<br />
+    per
+  </p>
+</div>
+
+<script>
+  import Typed from "typed.js";
+
+  new Typed("#profession-container", {
+    strings: ["Front<br />end<br />^400develo<br />per"],
+    typeSpeed: 70,
+    startDelay: 500,
+    showCursor: false,
+  });
+</script>

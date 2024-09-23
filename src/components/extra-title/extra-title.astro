@@ -1,0 +1,47 @@
+---
+import type { IconLink } from "@/shared/types/link";
+import Icon from "@/shared/ui/icon.astro";
+import "./extra-title.scss";
+
+interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  prefix?: string;
+  socials?: IconLink[];
+}
+
+const { prefix = "", socials = [], ...props } = Astro.props;
+---
+
+<div {...props} class='extra-title'>
+  <h1 class='extra-title__content'>
+    SERGEY <span>FREY</span>
+  </h1>
+
+  <ul class='extra-title__social'>
+    {
+      socials.map((social) => (
+        <li class='extra-title__social__item'>
+          <a
+            class:list={["extra-title__social__item__link", "interactive"]}
+            href={social.link}
+            title={social.title}
+            aria-label={social.title}
+            data-cursor='opacity-bg-cursor'
+          >
+            <span />
+            <span />
+            <span />
+            <span />
+            <Icon icon={`${prefix}${social.icon}`} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  import { cursorResolver } from "@/shared/lib/cursor";
+  import { opacityBgResolver } from "@/shared/ui/cursor/resolvers";
+
+  cursorResolver.add("extra-title-social", opacityBgResolver({ p: 0 }));
+</script>

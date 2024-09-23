@@ -1,0 +1,73 @@
+---
+import "./cursor.scss";
+---
+
+<span class='cursor-marker-wrapper'></span>
+<span class='cursor-marker'></span>
+
+<script>
+  import { cursorResolver } from "@/shared/lib/cursor";
+  import { getCssVars } from "@/shared/lib/styles";
+  import { opacityBgResolver } from "./resolvers";
+
+  cursorResolver.add("opacity-bg-cursor", opacityBgResolver({ p: 0 }));
+  cursorResolver.add("button-cursor", opacityBgResolver({ p: 0 }));
+
+  const cursorMarkerWrapper = document.querySelector(
+    ".cursor-marker-wrapper",
+  ) as HTMLElement;
+  const cursorMarker = document.querySelector(".cursor-marker") as HTMLElement;
+
+  let cursorClass: string | null = null;
+
+  document.addEventListener("mousemove", (event) => {
+    const target = event.target as HTMLElement;
+    const interactiveTarget = target.closest(
+      ".interactive",
+    ) as HTMLElement | null;
+
+    if (!interactiveTarget) {
+      const cursorPositionCssText = getCssVars({
+        x: `${event.clientX}px`,
+        y: `${event.clientY}px`,
+      });
+
+      cursorMarkerWrapper.style.cssText = cursorPositionCssText;
+      cursorMarker.style.cssText = cursorPositionCssText;
+
+      if (cursorClass) {
+        cursorMarkerWrapper.classList.remove(cursorClass);
+        cursorMarker.classList.remove(cursorClass);
+        cursorClass = null;
+      }
+
+      return;
+    }
+
+    cursorClass = interactiveTarget.dataset.cursor ?? null;
+
+    if (!cursorClass) return;
+
+    cursorMarkerWrapper.classList.add(cursorClass);
+    cursorMarker.classList.add(cursorClass);
+
+    const resolver = cursorResolver.get(cursorClass);
+
+    if (!resolver) return;
+
+    resolver({ event, interactiveTarget, cursorMarkerWrapper, cursorMarker });
+  });
+
+  document.addEventListener("mouseleave", () => {
+    cursorMarkerWrapper.style.visibility = "hidden";
+    cursorMarker.style.visibility = "hidden";
+  });
+
+  document.addEventListener("mouseenter", (event) => {
+    cursorMarkerWrapper.style.visibility = "visible";
+    cursorMarker.style.visibility = "visible";
+
+    cursorMarkerWrapper.style.left = `${event.clientX}px`;
+    cursorMarkerWrapper.style.top = `${event.clientY}px`;
+  });
+</script>

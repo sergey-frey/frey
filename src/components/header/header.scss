@@ -1,0 +1,12 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(var(--amountOfItems), 1fr);
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 30px 50px;
+
+  &>* {
+    justify-self: center;
+  }
+}

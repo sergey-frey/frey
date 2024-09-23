@@ -1,0 +1,114 @@
+.extra-title {
+  position: relative;
+
+  &__content {
+    color: var(--text-accent);
+    font-family: var(--font-accent);
+    font-size: 7.25rem;
+    text-align: center;
+
+    span {
+      color: var(--accent);
+    }
+  }
+
+  &__social {
+    position: absolute;
+    left: 50%;
+    bottom: -10rem;
+
+    display: flex;
+    align-items: center;
+    gap: 3.25rem;
+
+    list-style: none;
+
+    transform: translateX(-50%);
+
+    &__item {
+      &__link {
+        position: relative;
+
+        padding: 10px;
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        color: var(--text-accent);
+
+        transition-property: color;
+        transition-duration: var(--transition-duration-base);
+        transition-timing-function: ease-in-out;
+
+        span {
+          position: absolute;
+          background-color: var(--accent);
+          pointer-events: none;
+
+          transition-property: width, height;
+          transition-duration: var(--transition-duration-base);
+          transition-timing-function: ease-in-out;
+        }
+
+        span:nth-child(1) {
+          top: -10px;
+          left: 0;
+          width: 0%;
+          height: 3px;
+        }
+
+        span:nth-child(2) {
+          top: 0px;
+          right: -10px;
+          width: 3px;
+          height: 0%;
+        }
+
+        span:nth-child(3) {
+          bottom: -10px;
+          right: 0;
+          width: 0%;
+          height: 3px;
+        }
+
+        span:nth-child(4) {
+          bottom: 0px;
+          left: -10px;
+          width: 3px;
+          height: 0%;
+        }
+
+        &:hover {
+
+          span:nth-child(1),
+          span:nth-child(3) {
+            width: 100%;
+          }
+
+          span:nth-child(2),
+          span:nth-child(4) {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cursor-marker-wrapper.extra-title-social {
+  background-color: var(--accent);
+
+  transform-origin: center center;
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+
+  transition-property: all;
+  transition-duration: 250ms;
+}
+
+.cursor-marker.extra-title-social {
+  background-color: var(--accent);
+
+  transition-property: background-color;
+  transition-duration: 200ms;
+}

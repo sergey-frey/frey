@@ -1,0 +1,17 @@
+---
+import "./header.scss";
+
+interface Props extends astroHTML.JSX.BaseHTMLAttributes {
+  amountOfItems: number;
+}
+
+const { class: className, amountOfItems, ...props } = Astro.props;
+---
+
+<header
+  {...props}
+  class:list={["header", className]}
+  style=`--amountOfItems:${amountOfItems}`
+>
+  <slot />
+</header>

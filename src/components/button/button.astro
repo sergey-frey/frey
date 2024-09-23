@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import "./button.scss";
+
+export interface Props extends HTMLAttributes<"button"> {
+  isLink?: boolean;
+}
+
+const { class: className, isLink = false, ...props } = Astro.props;
+
+const hasIcon = Astro.slots.has("right-icon") || Astro.slots.has("left-icon");
+---
+
+<button
+  data-cursor='button-cursor'
+  {...props}
+  class:list={["button", "interactive", { withIcon: hasIcon }, className]}
+>
+  <slot name='left-icon' />
+  <slot />
+  <slot name='right-icon' />
+</button>
