@@ -5,33 +5,48 @@ import ExtraTitle from "@/components/extra-title/extra-title.astro";
 import Header from "@/components/header/header.astro";
 import Link from "@/components/link/link.astro";
 import ProfessionLabel from "@/components/profession-label/profession-label.astro";
-import QuestLink from "@/components/quest-link/quest-link.astro";
 import Layout from "@/layouts/Layout.astro";
 import Icon from "@/shared/ui/icon.astro";
 
 import "./index-page.scss";
 ---
 
-<Layout title='Sergey Frey'>
-  <Header amountOfItems={4}>
-    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+<Layout title="Sergey Frey">
+  <!-- <Header amountOfItems={4}>
+    <Link
+      href={"#"}
+      class:list={["interactive", "disabled"]}
+      data-cursor="crossed-cursor"
+    >
       About me
     </Link>
-    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+    <Link
+      href={"#"}
+      class:list={["interactive", "disabled"]}
+      data-cursor="crossed-cursor"
+    >
       Projects
     </Link>
-    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+    <Link
+      href={"#"}
+      class:list={["interactive"]}
+      data-cursor="opacity-bg-cursor"
+    >
       Contacts
     </Link>
-    <Link href={"#"} class={"interactive"} data-cursor='opacity-bg-cursor'>
+    <Link
+      href={"#"}
+      class:list={["interactive", "disabled"]}
+      data-cursor="crossed-cursor"
+    >
       Experience
     </Link>
-  </Header>
+  </Header> -->
 
-  <main class='main'>
+  <main class="main">
     <ExtraTitle
       class={"extra-title"}
-      prefix='social/'
+      prefix="social/"
       socials={[
         {
           icon: "telegram",
@@ -51,15 +66,15 @@ import "./index-page.scss";
       ]}
     />
 
-    <div class='labels'>
-      <ProfessionLabel client:visible />
+    <div class="labels">
+      <ProfessionLabel />
       <AboutLabel />
     </div>
 
-    <div class='controls'>
+    <div class="controls">
       <LinkButton href={"#"}>
         Связаться со мной
-        <Icon icon='top-right-arrow' slot={"right-icon"} />
+        <Icon icon="top-right-arrow" slot={"right-icon"} />
       </LinkButton>
 
       <!-- <QuestLink /> -->

@@ -47,12 +47,35 @@
   background-color: var(--text-accent);
   opacity: 0.3;
 
-  transition-property: all, width, height;
+  transition-property: all;
   transition-duration: 200ms;
 }
 
 .cursor-marker.opacity-bg-cursor {
   background-color: color-mix(in oklab, var(--text-accent) 30%, var(--accent));
+
+  transition-property: background-color;
+  transition-duration: 200ms;
+}
+
+.cursor-marker-wrapper.crossed-cursor {
+  --cursor-width: calc(var(--w, 3.5rem) + var(--p) * 2);
+  --y: calc(var(--targetY) + var(--h) / 2);
+  --x: calc(var(--targetX) - var(--p) + var(--cursor-width) / 2);
+
+  width: var(--cursor-width);
+  height: var(--cursor-height);
+
+  border-radius: 10px;
+  border: none;
+  background-color: var(--danger);
+
+  transition-property: all;
+  transition-duration: 200ms;
+}
+
+.cursor-marker.crossed-cursor {
+  background-color: var(--danger);
 
   transition-property: background-color;
   transition-duration: 200ms;

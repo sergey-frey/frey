@@ -18,6 +18,10 @@
     transition-timing-function: ease-in-out;
   }
 
+  &.disabled {
+    opacity: 0.5;
+  }
+
   &:hover {
     column-gap: 12px;
 

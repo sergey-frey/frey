@@ -40,6 +40,11 @@
         transition-duration: var(--transition-duration-base);
         transition-timing-function: ease-in-out;
 
+        svg {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+
         span {
           position: absolute;
           background-color: var(--accent);
@@ -79,7 +84,6 @@
         }
 
         &:hover {
-
           span:nth-child(1),
           span:nth-child(3) {
             width: 100%;

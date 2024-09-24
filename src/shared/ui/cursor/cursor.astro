@@ -2,19 +2,20 @@
 import "./cursor.scss";
 ---
 
-<span class='cursor-marker-wrapper'></span>
-<span class='cursor-marker'></span>
+<span class="cursor-marker-wrapper"></span>
+<span class="cursor-marker"></span>
 
 <script>
   import { cursorResolver } from "@/shared/lib/cursor";
   import { getCssVars } from "@/shared/lib/styles";
-  import { opacityBgResolver } from "./resolvers";
+  import { crossedResolver, opacityBgResolver } from "./resolvers";
 
   cursorResolver.add("opacity-bg-cursor", opacityBgResolver({ p: 0 }));
   cursorResolver.add("button-cursor", opacityBgResolver({ p: 0 }));
+  cursorResolver.add("crossed-cursor", crossedResolver({ p: 0, height: 3 }));
 
   const cursorMarkerWrapper = document.querySelector(
-    ".cursor-marker-wrapper",
+    ".cursor-marker-wrapper"
   ) as HTMLElement;
   const cursorMarker = document.querySelector(".cursor-marker") as HTMLElement;
 
@@ -23,7 +24,7 @@ import "./cursor.scss";
   document.addEventListener("mousemove", (event) => {
     const target = event.target as HTMLElement;
     const interactiveTarget = target.closest(
-      ".interactive",
+      ".interactive"
     ) as HTMLElement | null;
 
     if (!interactiveTarget) {
